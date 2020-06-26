@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="../static/index.css" th:href="@{index.css}" rel="stylesheet"/>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-6">
+    <h1 class="about-margin-h" th:text="${title}"/>
+    <div class="">
+        <h5 class="text-xl-left">Онлайн-кинотеатр: фильмы в хорошем качестве всегда приносят настоящее удовольствие</h5>
+        <div class="text-xl-left about-margin">Каждый день миллионы людей ищут фильмы онлайн, и никто не хочет усложнять
+            себе жизнь – и вы наверняка один
+            из них! А раз так, то KinoGuide – это именно тот ресурс, который вам нужен. От лучших кинолент в HD-качестве
+            вас...
+        </div>
+        <h5 class="text-xl-left">Лицензионные фильмы, сериалы и мультфильмы</h5>
+        <div class="text-xl-left">Мы убеждены, что хорошее кино и сериалы заслуживают просмотра в высоком качестве и
+            профессиональной
+            лицензионной
+            русскоязычной озвучке. Ведь создатели тщательно прорабатывали не только сценарную, но и тех...
+        </div>
+        <div class="about-center-display">
+            <h1>Приятного время проведения!</h1>
+            <div>
+                <a href="/kino">Посомтреть список фильмов</a>
+            </div>
+        </div>
+    </div>
+    <div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

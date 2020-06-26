@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление фильма</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Добавление фильма</h1>
+    <form th:action="@{/kino/add}" method="post">
+        <input type="text" name="title" placeholder="Введите название фильма" class="form-control"><br>
+        <input type="text" name="genre" placeholder="Введите жанр фильма" class="form-control"><br>
+        <input type="text" name="director" placeholder="Введите режисера фильма" class="form-control"><br>
+        <input type="text" name="yearKino" placeholder="Введите год выпуска фильма" class="form-control"><br>
+        <input type="text" name="full_text" placeholder="Введите описание фильма" class="form-control"><br>
+        <input type="text" name="startTime" placeholder="Введите сеансы фильма" class="form-control"><br>
+        <input type="text" name="shareLink" placeholder="Введите ссылку на сеанс" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Добавить фильм</button>
+    </form>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

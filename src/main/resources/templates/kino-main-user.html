@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Фильмы</title>
+    <meta http-equiv="Content-Type" content="text/html"/>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="../static/index.css" th:href="@{index.css}" rel="stylesheet"/>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container">
+    <h1>Список фильмов на 14.05.2020</h1>
+</div>
+<div class="jumbotron" th:each="el: ${posts}">
+    <div class="container">
+        <h3 th:text="${el.title}" class="display-7"/>
+        <p th:text="${el.genre}" class="lead"/>
+        <p th:text="'Сеансы: ' + ${el.startTime}" class="lead"/>
+        <hr class="my-4">
+        <a th:href="'/kino/' + ${el.id}" class="btn btn-dark">Детальнее</a>
+        <a th:href="'/cabinet/' + ${el.id}" class="btn btn-dark">Получить ссылку на фильм</a>
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

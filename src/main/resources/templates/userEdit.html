@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изменения пользователей</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link href="../static/index.css" th:href="@{index.css}" rel="stylesheet"/>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <h2 style="margin: 40px;">Изменение пользователя</h2>
+    <form th:action="${'/user'}" method="post">
+        <div class="form-group"><input type="text" class="form-control" name="username" th:value="${user.username}"/>
+        </div>
+        <div th:each="role : ${roles}" class="form-group form-check">
+            <input type="checkbox" class="form-check-input" th:name="${role}"/><label th:text="${role}"/>
+        </div>
+        <input type="hidden" th:value="${user.id}" name="id"/>
+        <button type="submit" class="btn btn-dark">Сохранить</button>
+    </form>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
